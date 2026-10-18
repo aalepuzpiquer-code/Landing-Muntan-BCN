@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evento Exclusivo VIP · Muntané BCN | El bolso que rompe con lo típico</title>
+
+  <!-- Favicon Oficial de Muntané BCN -->
+  <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=muntanebcn.com&sz=128">
+  <link rel="shortcut icon" href="https://www.muntanebcn.com/favicon.ico">
+
+  <!-- Google Fonts: Jost (Titulares) & Cabin (Cuerpo) + Dancing Script (Logo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@700&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #ff73b2;
+      --primary-hover: #f2569d;
+      --primary-light: #fff0f7;
+      --primary-border: #ffd1e6;
+      --dark: #121212;
+      --text: #2b2b2b;
+      --muted: #666666;
+      --white: #ffffff;
+      --off-white: #fafafa;
+      --mustard: #f4b400;
+      --turquoise: #00b8d4;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(255, 115, 178, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cabin', sans-serif;
+      color: var(--text);
+      background-color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .btn, .nav-links a, .announcement-bar, .hero-kicker, .badge {
+      font-family: 'Jost', sans-serif;
+    }
+
+    /* Barra superior estilo Shopify Muntané BCN */
+    .announcement-bar {
+      background-color: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Cabecera y Navegación */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #f0f0f0;
+      padding: 0.9rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      text-decoration: none;
+      color: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+    }
+
+    .brand-logo .script {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-logo .sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.35em;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 0.85rem 1.9rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 18px rgba(255, 115, 178, 0.32);
+    }
+
+    .btn:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(255, 115, 178, 0.45);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--dark);
+      border: 2px solid var(--primary);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    /* HERO OFICIAL MUNTANÉ BCN */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #fff5fa 0%, #ffffff 55%, #fff0f7 100%);
+      padding: 4.5rem 5% 4rem;
+      overflow: hidden;
+      border-bottom: 1px solid var(--primary-border);
+    }
+
+    .hero-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-block;
+      background-color: var(--white);
+      border: 1.5px solid var(--primary);
+      color: var(--dark);
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 12px rgba(255, 115, 178, 0.12);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+      color: var(--dark);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+      display: block;
+    }
+
+    .hero-recycled {
+      font-family: 'Cabin', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-event-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* Collage de imágenes oficiales en el Hero */
+    .hero-visual {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      position: relative;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 0.6rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--primary-border);
+      text-decoration: none;
+      color: var(--dark);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hero-card:nth-child(2) {
+      transform: translateY(18px);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 10px;
+      background-color: #fff5fa;
+    }
+
+    .hero-card-title {
+      font-family: 'Jost', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-align: center;
+      padding-top: 0.5rem;
+    }
+
+    /* Sección de Valores de Marca */
+    .section {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 4.5rem 5%;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .value-card {
+      background: var(--white);
+      border: 1px solid #f0e4ea;
+      border-top: 4px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .value-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .value-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    /* Galería Oficial Conectada a Muntané BCN */
+    .products-strip {
+      background-color: var(--primary-light);
+      padding: 4rem 5%;
+    }
+
+    .products-grid {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--dark);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      background: #fdf2f7;
+    }
+
+    .product-info {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .product-info h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .product-info span {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* Escaleta / Programación del Evento */
+    .timeline-container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 20px;
+      border: 2px solid var(--primary-border);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-head {
+      background: var(--primary);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      padding: 1rem 1.5rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      padding: 1.1rem 1.5rem;
+      border-bottom: 1px solid #f5e6ed;
+      align-items: center;
+    }
+
+    .timeline-row:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-row:nth-child(even) {
+      background-color: #fffafd;
+    }
+
+    .timeline-time {
+      font-family: 'Jost', sans-serif;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.05rem;
+    }
+
+    /* Formulario de Inscripción VIP */
+    .rsvp-wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 22px;
+      padding: 3rem 2.5rem;
+      border: 2px solid var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 0.92rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1.5px solid #e2e2e2;
+      border-radius: 10px;
+      font-family: 'Cabin', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 115, 178, 0.18);
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 1.2rem 0 1.8rem;
+    }
+
+    .checkbox-row input {
+      margin-top: 0.25rem;
+      accent-color: var(--primary);
+      width: 18px;
+      height: 18px;
+    }
+
+    /* PÁGINA DE GRACIAS (OCULTA HASTA ENVIAR EL FORMULARIO) */
+    #thank-you-page {
+      display: none;
+      min-height: 82vh;
+      padding: 4rem 5%;
+      background: linear-gradient(180deg, var(--primary-light) 0%, var(--white) 100%);
+    }
+
+    .thank-you-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      border: 2px solid var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    .voucher-box {
+      background: linear-gradient(135deg, #fff0f7 0%, #ffffff 100%);
+      border: 2px dashed var(--primary);
+      border-radius: 18px;
+      padding: 2rem 1.5rem;
+      margin: 2rem 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      text-align: left;
+    }
+
+    .voucher-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .voucher-code {
+      display: inline-block;
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-weight: 700;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      letter-spacing: 0.08em;
+      margin-top: 0.5rem;
+    }
+
+    .qr-box {
+      text-align: center;
+      background: var(--white);
+      padding: 0.75rem;
+      border-radius: 12px;
+      border: 1px solid var(--primary-border);
+    }
+
+    .qr-box img {
+      width: 115px;
+      height: 115px;
+      display: block;
+      margin: 0 auto 0.35rem;
+    }
+
+    .qr-box span {
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: block;
+      color: var(--dark);
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 5%;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 820px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-recycled, .hero-actions {
+        justify-content: center;
+      }
+      .hero-event-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .voucher-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de anuncio superior con el color #ff73b2 -->
+  <div class="announcement-bar">
+    ✨ EVENTO EXCLUSIVO EN LA VILLA ZEN BARCELONA · PLAZAS LIMITADAS (40 INVITADAS VIP) ✨
+  </div>
+
+  <!-- Navegación -->
+  <header class="navbar">
+    <a href="https://www.muntanebcn.com/" target="_blank" rel="noopener" class="brand-logo">
+      <span class="script">Muntané</span>
+      <span class="sub">BARCELONA</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#valores">Filosofía</a>
+      <a href="#coleccion">Colección Oficial</a>
+      <a href="#agenda">Programación</a>
+      <a href="https://www.muntanebcn.com/pages/bolsos" target="_blank" rel="noopener">Tienda Oficial ↗</a>
+    </nav>
+    <a href="#inscripcion" class="btn" style="padding: 0.6rem 1.3rem; font-size: 0.82rem;">Apuntarme al Evento</a>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL DE LA LANDING -->
+  <div id="landing-content">
+
+    <!-- HERO SECTION CON EL FORMATO OFICIAL DE MUNTANÉ BCN -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-kicker">✨ ATRÉVETE A DESTACAR ✨</div>
+          <h1 class="hero-title">
+            EL BOLSO QUE ROMPE
+            <span>CON LO TÍPICO</span>
+          </h1>
+          <p class="hero-recycled">
+            Hecho a mano con materiales reciclados ♻️
+          </p>
+          <p class="hero-event-desc">
+            Te invitamos a vivir en directo la presentación de la nueva colección de <strong>Muntané BCN</strong> en <strong>La Villa Zen Barcelona</strong>. Una tarde exclusiva junto a Mariona para celebrar la artesanía, el color y la moda sostenible.
+          </p>
+          <div class="hero-actions">
+            <a href="#inscripcion" class="btn">Confirmar Asistencia VIP</a>
+            <a href="https://www.muntanebcn.com/" target="_blank" rel="noopener" class="btn btn-outline">Ver Web Oficial</a>
+          </div>
+        </div>
+
+        <!-- Collage conectado a los productos oficiales de muntanebcn.com -->
+        <div class="hero-visual" id="hero-gallery">
+          <a href="https://www.muntanebcn.com/products/little-lover" target="_blank" rel="noopener" class="hero-card">
+            <img id="img-hero-1" alt="Bolso Little Lover Muntané BCN" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><rect width='400' height='400' fill='%23ff73b2'/><path d='M0 80h400M0 160h400M0 240h400M0 320h400' stroke='%23f4b400' stroke-width='35'/><path d='M80 0v400M160 0v400M240 0v400M320 0v400' stroke='%2300b8d4' stroke-width='35' opacity='0.85'/><rect x='110' y='165' width='180' height='70' rx='10' fill='white'/><text x='200' y='208' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle' fill='%23121212'>Muntané BCN</text></svg>">
+            <div class="hero-card-title">Little Lover · Ver en web ↗</div>
+          </a>
+          <a href="https://www.muntanebcn.com/products/gaudi" target="_blank" rel="noopener" class="hero-card">
+            <img id="img-hero-2" alt="Bolso Gaudí Muntané BCN" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><rect width='400' height='400' fill='%23121212'/><path d='M0 70h400M0 150h400M0 230h400M0 310h400' stroke='%23ff73b2' stroke-width='32'/><path d='M70 0v400M150 0v400M230 0v400M310 0v400' stroke='%23f4b400' stroke-width='32' opacity='0.9'/><rect x='110' y='165' width='180' height='70' rx='10' fill='white'/><text x='200' y='208' font-family='sans-serif' font-size='22' font-weight='bold' text-anchor='middle' fill='%23ff73b2'>Gaudí BCN</text></svg>">
+            <div class="hero-card-title">Modelo Gaudí · Ver en web ↗</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORES Y EXPERIENCIA DEL EVENTO -->
+    <section class="section" id="valores">
+      <div class="section-header">
+        <span class="badge">Experiencia Muntané BCN</span>
+        <h2>Mucho más que un complemento</h2>
+        <p>Un encuentro diseñado para conectar con la historia detrás de cada tejido, las mujeres artesanas que lo hacen posible y nuestra comunidad más especial.</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🧶</div>
+          <h3>Artesanía y Mujeres</h3>
+          <p>Presentación de la filosofía de Muntané BCN y de las mujeres artesanas que trenzan a mano cada pieza convirtiéndola en única.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">♻️</div>
+          <h3>Moda Sostenible</h3>
+          <p>Diseños vibrantes elaborados con plástico 100% reciclado, pensados para personas atrevidas que llevan la moda a otro nivel.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">📸</div>
+          <h3>Photocall & Fingerfood</h3>
+          <p>Espacio fotográfico sostenible en la terraza de La Villa Zen con música ambiente, cóctel y un obsequio exclusivo al llegar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA DE BOLSOS CONECTADA A MUNTANEBCN.COM -->
+    <section class="products-strip" id="coleccion">
+      <div class="section-header">
+        <span class="badge" style="background: var(--white);">Iconos de la Marca</span>
+        <h2>Rompe con lo aburrido</h2>
+        <p>Durante el evento tendrás acceso a la <strong>venta exclusiva y limitada</strong> de la nueva colección.</p>
+      </div>
+
+      <div class="products-grid" id="official-products-grid">
+        <a href="https://www.muntanebcn.com/products/little-lover" target="_blank" rel="noopener" class="product-item">
+          <img class="live-product-img" data-index="0" alt="Little Lover" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><rect width='300' height='300' fill='%23ff73b2'/><circle cx='150' cy='150' r='80' fill='%23fff0f7'/><text x='150' y='156' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23121212'>Little Lover</text></svg>">
+          <div class="product-info">
+            <h4>Little Lover</h4>
+            <span>64,95 € · Ver en tienda ↗</span>
+          </div>
+        </a>
+        <a href="https://www.muntanebcn.com/collections/best-sellers-1" target="_blank" rel="noopener" class="product-item">
+          <img class="live-product-img" data-index="1" alt="¡CHISPAS!" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><rect width='300' height='300' fill='%23f4b400'/><circle cx='150' cy='150' r='80' fill='%23ffffff'/><text x='150' y='156' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23121212'>¡CHISPAS!</text></svg>">
+          <div class="product-info">
+            <h4>¡CHISPAS!</h4>
+            <span>64,95 € · Ver en tienda ↗</span>
+          </div>
+        </a>
+        <a href="https://www.muntanebcn.com/products/gaudi" target="_blank" rel="noopener" class="product-item">
+          <img class="live-product-img" data-index="2" alt="Gaudí" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><rect width='300' height='300' fill='%2300b8d4'/><circle cx='150' cy='150' r='80' fill='%23ffffff'/><text x='150' y='156' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23121212'>Gaudí</text></svg>">
+          <div class="product-info">
+            <h4>Gaudí</h4>
+            <span>64,95 € · Ver en tienda ↗</span>
+          </div>
+        </a>
+        <a href="https://www.muntanebcn.com/products/mini-oporto" target="_blank" rel="noopener" class="product-item">
+          <img class="live-product-img" data-index="3" alt="Mini Oporto" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><rect width='300' height='300' fill='%23ff73b2'/><circle cx='150' cy='150' r='80' fill='%23ffffff'/><text x='150' y='156' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23121212'>Mini Oporto</text></svg>">
+          <div class="product-info">
+            <h4>Mini Oporto</h4>
+            <span>39,95 € · Ver en tienda ↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- PROGRAMACIÓN DEL EVENTO -->
+    <section class="section" id="agenda">
+      <div class="section-header">
+        <span class="badge">La Villa Zen Barcelona</span>
+        <h2>Programación del Día</h2>
+        <p>Cada momento está pensado para que disfrutes de la experiencia Muntané BCN de principio a fin.</p>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline-head">
+          <div>Hora</div>
+          <div>Actividad</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-time">17:00 h</div>
+          <div><strong>Inicio del evento y presentación:</strong> Recepción individual y bienvenida de Mariona.</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-time">17:30 h</div>
+          <div><strong>Aperitivo comedor:</strong> Primer encuentro con música ambiente.</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-time">18:15 h</div>
+          <div><strong>Presentación de la colección:</strong> Historia de las artesanas y narrativa de las nuevas piezas.</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-time">19:00 h</div>
+          <div><strong>Venta de los bolsos abierta:</strong> Acceso exclusivo y limitado para las asistentes.</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-time">19:45 h</div>
+          <div><strong>Cierre de la venta exclusiva</strong> y preparación de la terraza.</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-time">19:50 h</div>
+          <div><strong>FingerFood, música ambiente y Photocall:</strong> Momento de conexión y fotos oficiales.</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-time">21:00 h</div>
+          <div><strong>Fin del evento:</strong> Entrega de detalle y código de ventaja exclusiva VIP.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE INSCRIPCIÓN -->
+    <section class="section" id="inscripcion">
+      <div class="rsvp-wrapper">
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <span class="badge">Inscripción VIP</span>
+          <h2>Reserva tu Plaza</h2>
+          <p>Completa tus datos para recibir tu pase personal y el código de descuento exclusivo del evento.</p>
+        </div>
+
+        <form id="vip-form">
+          <div class="form-group">
+            <label for="guest-name">Nombre y apellidos *</label>
+            <input type="text" id="guest-name" class="form-control" placeholder="Ej. Martina Soler" required>
+          </div>
+
+          <div class="form-group">
+            <label for="guest-email">Correo electrónico *</label>
+            <input type="email" id="guest-email" class="form-control" placeholder="tu@correo.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="guest-phone">Teléfono móvil (para el Canal VIP de WhatsApp) *</label>
+            <input type="tel" id="guest-phone" class="form-control" placeholder="+34 600 000 000" required>
+          </div>
+
+          <div class="form-group">
+            <label for="guest-bag">¿Qué modelo de Muntané BCN te gusta más?</label>
+            <select id="guest-bag" class="form-control">
+              <option value="Little Lover">Little Lover (Best Seller)</option>
+              <option value="¡Chispas!">¡Chispas! (Multicolor Vibrante)</option>
+              <option value="Gaudí">Gaudí (Inspiración Barcelona)</option>
+              <option value="Oporto / Calles de Guatapé">Oporto / Calles de Guatapé</option>
+              <option value="Nueva Colección">¡Quiero descubrir la Nueva Colección en el evento!</option>
+            </select>
+          </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="vip-consent" required checked>
+            <label for="vip-consent">
+              Quiero formar parte de la <strong>Comunidad VIP de Muntané BCN</strong>, recibir el enlace de descarga de las fotos del photocall y mi código de descuento exclusivo.
+            </label>
+          </div>
+
+          <button type="submit" class="btn" style="width: 100%; font-size: 1.05rem;">
+            Confirmar mi Asistencia VIP ✨
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- PÁGINA DE GRACIAS AL INSCRIBIRSE -->
+  <section id="thank-you-page">
+    <div class="thank-you-card">
+      <span class="badge">✨ Inscripción Confirmada ✨</span>
+      <h2 style="font-size: 2.3rem; text-transform: uppercase; margin-bottom: 0.75rem;">
+        ¡Hola, <span id="confirmed-name" style="color: var(--primary);">Invitada VIP</span>!
+      </h2>
+      <p style="font-size: 1.08rem; color: var(--text); margin-bottom: 1rem;">
+        Quería darte las gracias personalmente por apuntarte al evento de <strong>Muntané BCN</strong> 🌸. Nos hace muchísima ilusión poder contar contigo en <strong>La Villa Zen Barcelona</strong> (de 17:00 h a 21:00 h) y compartir este momento tan especial.
+      </p>
+      <p style="font-size: 0.95rem; color: var(--muted);">
+        Al entrar al evento te entregaremos tu tarjeta en mano, pero aquí tienes ya tu <strong>pase y ventaja exclusiva VIP</strong>:
+      </p>
+
+      <!-- Tarjeta Descuento Exclusivo MUNTANE27 fiel al PDF -->
+      <div class="voucher-box">
+        <div>
+          <div style="font-family: 'Dancing Script', cursive; font-size: 1.6rem;">Muntané</div>
+          <div class="voucher-title">Descuento Exclusivo</div>
+          <p style="font-size: 0.9rem; color: var(--muted);">Presenta este pase en la recepción o úsalo en tus próximas compras VIP:</p>
+          <div class="voucher-code">Código: "MUNTANE27"</div>
+        </div>
+        <div class="qr-box">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&color=ff73b2&data=https://www.muntanebcn.com/" alt="QR Comunidad VIP Muntané BCN">
+          <span>Escanea para info VIP</span>
+        </div>
+      </div>
+
+      <p style="font-size: 0.95rem; margin-bottom: 1.8rem;">
+        Un abrazo,<br>
+        <strong>Mariona Muntané · Muntané BCN</strong>
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+        <a href="https://www.muntanebcn.com/pages/bolsos" target="_blank" rel="noopener" class="btn">
+          Explorar Bolsos en Muntanebcn.com ↗
+        </a>
+        <button type="button" onclick="volverALanding()" class="btn btn-outline">
+          ← Volver a la página del evento
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: var(--primary);">Muntané</div>
+    <div style="letter-spacing: 0.3em; font-size: 0.65rem; margin-bottom: 1rem;">BARCELONA</div>
+    <p>✨ ATRÉVETE A DESTACAR · Hecho a mano con materiales reciclados ♻️</p>
+    <p style="margin-top: 0.5rem;">
+      Web oficial: <a href="https://www.muntanebcn.com/" target="_blank" rel="noopener">www.muntanebcn.com</a>
+    </p>
+  </footer>
+
+  <!-- Script para cargar las fotos reales de la tienda Shopify de Muntané BCN y gestionar la página de Gracias -->
+  <script>
+    // 1. Cargar automáticamente las imágenes oficiales desde el catálogo público de muntanebcn.com
+    async function cargarImagenesOficialesMuntane() {
+      try {
+        const res = await fetch('https://www.muntanebcn.com/products.json?limit=8');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data && data.products && data.products.length > 0) {
+          const hero1 = document.getElementById('img-hero-1');
+          const hero2 = document.getElementById('img-hero-2');
+          if (data.products[0]?.images?.[0]?.src && hero1) {
+            hero1.src = data.products[0].images[0].src;
+          }
+          if (data.products[1]?.images?.[0]?.src && hero2) {
+            hero2.src = data.products[1].images[0].src;
+          }
+
+          const cards = document.querySelectorAll('.live-product-img');
+          cards.forEach((img, idx) => {
+            const prod = data.products[idx];
+            if (prod && prod.images && prod.images[0]) {
+              img.src = prod.images[0].src;
+              img.alt = prod.title;
+              const parentLink = img.closest('a');
+              if (parentLink && prod.handle) {
+                parentLink.href = 'https://www.muntanebcn.com/products/' + prod.handle;
+              }
+              const titleEl = parentLink?.querySelector('h4');
+              if (titleEl) titleEl.textContent = prod.title;
+            }
+          });
+        }
+      } catch (e) {
+        // Si el navegador bloquea peticiones externas en modo archivo local, se mantienen los diseños vectoriales integrados.
+      }
+    }
+
+    cargarImagenesOficialesMuntane();
+
+    // 2. Mostrar la página de Gracias personalizada al enviar el formulario
+    const form = document.getElementById('vip-form');
+    const landingContent = document.getElementById('landing-content');
+    const thankYouPage = document.getElementById('thank-you-page');
+    const confirmedName = document.getElementById('confirmed-name');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const nombre = document.getElementById('guest-name').value.trim();
+      if (nombre) {
+        confirmedName.textContent = nombre;
+      }
+      landingContent.style.display = 'none';
+      thankYouPage.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function volverALanding() {
+      thankYouPage.style.display = 'none';
+      landingContent.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
